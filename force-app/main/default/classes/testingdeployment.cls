@@ -1,5 +1,5 @@
 public with sharing class testingdeployment {
-    public testingdeployment() {
-
+    public static void testingdeploymentsdd() {
+             system.debug('ksdjakdjakdsa');
     }
 }
