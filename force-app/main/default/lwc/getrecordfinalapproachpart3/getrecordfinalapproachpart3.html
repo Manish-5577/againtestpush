@@ -1,0 +1,16 @@
+<template>
+    <div>
+        <lightning-card icon-name="standard:account" variant="base">
+         
+          <div>
+            <template if:true={accountdata}>
+                <h1 class ="test">Get Record with hard field reference</h1>
+                
+                    <h1> Industry value for account : {indus}</h1>
+                  <h1> Name value  for account : {name}</h1>
+                </template>
+          </div>
+        </lightning-card>
+
+    </div>
+</template>

@@ -1,0 +1,16 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+        <div slot="title">
+           Show Casing Parent value coming from Parent
+        </div>
+        <div>
+         <lightning-input 
+           type="text"
+           label="Parent value showcasing"
+           value={getparentval}
+         ></lightning-input>
+<lightning-button variant="ap" label="api value check" title="titleName" onclick={handleClick}></lightning-button>
+        !!!@@@@@@@@@@@@ <p>{getparentval}</p>
+        </div>
+      </lightning-card>
+</template>

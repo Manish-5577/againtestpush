@@ -1,0 +1,55 @@
+<template>
+    <div class="container">
+
+        <!-- First Screen -->
+        <template if:true={isFirstScreen}>
+            <div class="dance-background">
+                <img src={doraemonImage} class="doraemon-dancer" />
+                <h1 class="birthday-message">{birthdayMessage}</h1>
+                <button class="proceed-button" onclick={handleProceed}>Proceed to Next Step</button>
+            </div>
+        </template>
+
+        <!-- Second Screen -->
+        <template if:true={isSecondScreen}>
+            <div class="gallery">
+                <h2 class="gallery-heading">Memory Gallery</h2>
+                <lightning-layout multiple-rows>
+                    <template for:each={images} for:item="img">
+                        <lightning-layout-item key={img.id} size="12" small-device-size="12" medium-device-size="6" large-device-size="4" padding="around-small">
+                            <div class="flip-card" data-id={img.id} onclick={handleFlip}>
+                                <div class={img.className}>
+                                    <div class="flip-card-front">
+                                        <img src={img.url} alt="Memory Photo" />
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <p>{img.message}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+                <button class="proceed-button" onclick={goToThirdScreen}>Proceed to Next Step</button>
+            </div>
+        </template>
+
+        <!-- Third Screen -->
+        <template if:true={isThirdScreen}>
+            <div class="third-screen">
+                <h1 class="third-message">You are a truly special friend! 💖</h1>
+                <button class="proceed-button" onclick={goToFourthScreen}>See Final Surprise</button>
+            </div>
+        </template>
+
+        <!-- Fourth Screen -->
+        <template if:true={isFourthScreen}>
+            <div class="final-screen">
+                <h1 class="final-message">🎉🎂 Happy Birthday 🎂🎉</h1>
+                <p class="final-note">Wishing you a day filled with joy, laughter, and sweet memories!</p>
+                <div class="celebration-effect"></div>
+            </div>
+        </template>
+
+    </div>
+</template>

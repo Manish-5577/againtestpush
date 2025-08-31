@@ -1,0 +1,39 @@
+<template>
+    <template if:true={recorddetail}>
+       <lightning-layout>
+   <lightning-layout-item size="6">
+      <lightning-input 
+        type="text"
+        label="Subject"
+        value={recorddetail.Subject}
+        disabled="true"
+      ></lightning-input>
+        </p>
+    
+        
+     
+   </lightning-layout-item>
+   <lightning-layout-item size="6" >
+    <p>Status</p>
+    {recorddetail.Status}     
+    
+   </lightning-layout-item>
+ </lightning-layout>
+ <lightning-layout>
+    <lightning-layout-item size="6">
+      <p>Subject</p>
+      {recorddetail.ActivityDate}     
+    
+    </lightning-layout-item>
+    <lightning-layout-item size="6" >
+     <p>Status</p>
+     {recorddetail.Priority}     
+     
+    </lightning-layout-item>
+  </lightning-layout>
+  <div>
+    <p>Comments</p>
+    {recorddetail.Description}
+  </div>
+</template>
+</template>

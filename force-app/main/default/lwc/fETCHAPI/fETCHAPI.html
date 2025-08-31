@@ -1,0 +1,27 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+          Get your Ip Address
+      </div>
+      <div slot="actions">
+    
+      </div>
+      <div slot="footer">
+    
+      </div>
+      <div>
+        <lightning-button 
+          variant="success"
+          label="Get Api" 
+          onclick={Fetchapi} 
+        ></lightning-button>
+        
+      </div>
+      <div>
+        <lightning-formatted-text 
+          value={returnip}
+           
+        ></lightning-formatted-text>
+      </div>
+    </lightning-card>
+</template>

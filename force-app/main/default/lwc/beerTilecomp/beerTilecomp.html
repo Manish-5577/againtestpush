@@ -1,0 +1,30 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+    <template lwc:if={beerRecord}>
+        <div slot="title">
+         {beerRecord.Name}
+      </div> 
+    </template>
+      <template lwc:if={beerRecord}>
+        <div class= "slds-m-around_small">
+            <p>
+               <img src={beerRecord.Image__c} alt="Girl in a jacket" width="300" height="150" />
+            </p>
+            <p>
+               <strong>Beer Id : </strong>{beerRecord.Id__c} <br/>
+               <strong>Alcohol % : </strong>{beerRecord.Alcohol__c} <br/>
+               <strong>Price : </strong>{beerRecord.Price__c} <br/>
+               <strong>Brewery Name : </strong>{beerRecord.brewery_Name__c} <br/>
+            </p>
+            <p  class="slds-m-around_small">
+             <lightning-button 
+               variant="brand"
+               label="Add to Cart" 
+               onclick={handleaddtocart} 
+             ></lightning-button>
+            </p>
+           </div>
+    </template>
+
+</lightning-card>
+</template>

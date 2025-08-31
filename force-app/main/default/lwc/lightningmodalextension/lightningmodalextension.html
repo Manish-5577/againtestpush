@@ -1,0 +1,37 @@
+<template>
+   
+    <lightning-modal-header label="first modal">
+        <lightning-input 
+        type="search"
+        label="search product"
+        onchange={showdata}
+      ></lightning-input>
+    </lightning-modal-header>
+    <lightning-modal-body>
+      
+      <template lwc:if={record}>
+        <c-lightningdatatableextended 
+        key-field="Id"
+        data={record}
+        columns={column}
+       
+        onreceiveid ={handlereceivedrecordid}
+        >
+        </c-lightningdatatableextended>
+      </template>
+     
+    </lightning-modal-body>
+    <lightning-modal-footer>
+      <lightning-button 
+        variant="brand"
+        label="cancel" 
+        onclick={handlecancel} 
+      ></lightning-button>
+      &nbsp;&nbsp;
+      <lightning-button 
+        variant="brand"
+        label="save" 
+        onclick={handlesave} 
+      ></lightning-button>
+    </lightning-modal-footer>
+</template>

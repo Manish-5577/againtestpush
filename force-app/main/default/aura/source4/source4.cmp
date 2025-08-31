@@ -1,0 +1,8 @@
+<aura:component >
+
+   
+    
+     <aura:registerEvent name = "one" type = "c:testeventt" />
+     <aura:handler event ="c:testeventt" action = "{!c.invoke6}"/>
+    <lightning:button label ="sclick me!!!!!!!!!..." onclick ="{!c.handleclcik}"/>
+</aura:component>

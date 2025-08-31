@@ -1,0 +1,12 @@
+<aura:component implements="force:appHostable,force:lightningQuickAction" access="global" >
+    <aura:handler  event ="c:eventpropagation" action ="{!c.handleevent}" 
+        includeFacets ="true"          />
+    <aura:attribute name ="abc" type ="Double" />
+        handler compoennet 
+   
+    <div>
+      {!v.body}
+        djklsadjjjjj
+   <!-- <c:eventpropgationsource></c:eventpropgationsource>-->
+    </div>
+</aura:component>

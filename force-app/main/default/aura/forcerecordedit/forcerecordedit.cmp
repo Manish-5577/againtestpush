@@ -1,0 +1,28 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    
+     <aura:attribute name="accountRecord" type="Object"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+     <p class="abc">
+     force   record edit  component 
+            </p>
+    <force:recordEdit aura:id="recordLoader"
+    recordId="0015j00001dbbOtAAI"
+    onSaveSuccess ="{!c.handlesuccess}"     
+    />
+    
+    <div> 
+       
+              <div class="slds-p-horizontal--small">
+                         <!--         <lightning:input name="input1" label="Name"  value ="{!v.accountRecord.Name}"/>
+                  <lightning:input  name="input1" label="Industry"  value ="{!v.accountRecord.Industry}"/>  -->
+ 
+            </div>
+            <div> 
+            <lightning:button label="Save" variant ="success" onclick="{!c.save}"/>
+                </div>
+        
+    </div>
+    
+    
+</aura:component>

@@ -1,0 +1,4 @@
+<aura:component >
+	<aura:handler name = "one" event ="c:testeventt" action = "{!c.invoke1}" />
+    <c:source1/>
+</aura:component>

@@ -1,0 +1,202 @@
+/* ✅ Screen 1 and Screen 2 CSS (From Your Provided Code) */
+
+.container {
+    text-align: center;
+    min-height: 100vh;
+    background-color: #f0f8ff;
+    padding: 1rem;
+}
+
+.birthday-message {
+    font-size: 3rem;
+    color: #ff4081;
+    margin: 1rem 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.proceed-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.proceed-button:hover {
+    background-color: #45a049;
+}
+
+.dance-background {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(to top, #ff9a9e, #fad0c4);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.doraemon-dancer {
+    width: 120px;
+    animation: kathakDance 6s infinite ease-in-out;
+}
+
+@keyframes kathakDance {
+    0% { transform: rotate(0deg) translateX(0); }
+    10% { transform: rotate(15deg) translateX(20px); }
+    20% { transform: rotate(-15deg) translateX(-20px); }
+    30% { transform: rotate(15deg) translateX(20px); }
+    40% { transform: rotate(-15deg) translateX(-20px); }
+    50% { transform: rotate(0deg) translateX(0); }
+    60% { transform: rotate(15deg) translateX(15px) scale(1.1); }
+    70% { transform: rotate(-15deg) translateX(-15px) scale(1); }
+    80% { transform: rotate(15deg) translateX(15px) scale(1.1); }
+    90% { transform: rotate(-15deg) translateX(-15px) scale(1); }
+    100% { transform: rotate(0deg) translateX(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.gallery-heading {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.gallery-item img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* ✅ Screen 3 CSS (New) */
+
+.third-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+    text-align: center;
+    padding: 1rem;
+}
+
+.third-message {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+/* ✅ Screen 4 CSS (New) */
+
+.final-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    text-align: center;
+    padding: 2rem;
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+}
+
+.final-message {
+    font-size: 3rem;
+    color: #4caf50;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite;
+}
+
+.final-note {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 1rem;
+}
+
+.celebration-effect {
+    width: 100%;
+    height: 100%;
+    background: url('https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif') center center no-repeat;
+    background-size: cover;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+
+/* Flip Card Styles for Screen 2 */
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flip-card-back {
+    background-color: #ffe7c2;
+    color: #333;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+}

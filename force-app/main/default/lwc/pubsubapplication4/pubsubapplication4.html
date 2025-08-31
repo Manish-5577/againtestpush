@@ -1,0 +1,17 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+        <div slot="pubsub 4">
+            
+            Message sent from this Component via Pubsub   to below pubsub1 comp
+        </div>
+        
+        <div>
+         <lightning-input 
+           type="text"
+           label="Type sent to pubsub"
+           onchange ={handlechange}
+         ></lightning-input>
+          
+        </div>
+      </lightning-card>
+</template>

@@ -1,0 +1,34 @@
+<template>
+    
+    <div class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="4" small-device-size="6" medium-device-size="4" large-device-size="4" padding="around-small">
+                <div class=" slds-p-around_medium slds-text-align_center namee ">{item.Beer__r.Name}</div>
+            </lightning-layout-item>
+            <lightning-layout-item size="4" small-device-size="6" medium-device-size="4" large-device-size="4" padding="around-small">
+                <div class=" slds-p-around_medium slds-text-align_center ">{item.Beer__r.Price__c}</div>
+            </lightning-layout-item>
+            <lightning-layout-item size="3" small-device-size="6" medium-device-size="4" large-device-size="3" padding="around-small">
+                <div class=" slds-p-around_medium slds-text-align_center ">{item.Item_Quantity__c}</div>
+            </lightning-layout-item>
+            <lightning-layout-item size="1" small-device-size="6" medium-device-size="4" large-device-size="1" padding="around-small">
+              <lightning-button 
+                variant="destructive"
+                label="Delete" 
+                title="Looks like" 
+                value="" 
+                type="button"
+                onclick={handledelete} 
+                stretch="false" 
+                icon-name="utility:delete"
+                icon-position="left"
+                class=""
+              ></lightning-button>
+                
+            </lightning-layout-item>
+           
+        </lightning-layout>
+    </div>
+
+
+</template>

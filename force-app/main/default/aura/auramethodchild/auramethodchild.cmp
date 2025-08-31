@@ -1,0 +1,24 @@
+<aura:component  controller ="handlerclasscontact">
+    <aura:attribute name="empname" type ="string"/>
+     <aura:attribute name="empsal" type ="Integer"/>
+     <aura:attribute name="empdept" type ="string"/>
+    <aura:method name ="callmethod" action ="{!c.callaction}">
+     <aura:attribute name="tempname" type ="string"/>
+     <aura:attribute name="tempsal" type ="Integer"/>
+     <aura:attribute name="tempdept" type ="string"/>
+    </aura:method>
+     <aura:method name ="asynchronouscallmethod" action ="{!c.callasynchronous}">
+     <aura:attribute name="tempname22" type ="string"/>
+     <aura:attribute name="tempsal22" type ="Integer"/>
+     <aura:attribute name="tempdept22" type ="string"/>
+    </aura:method>
+     <aura:method name="echo" action ="{!c.echo}"
+      description="Sample method with server-side call">
+        <aura:attribute name="callback" type="Function" />
+    </aura:method>
+    <div>
+    <p>EmpName : {!v.empname}</p>
+        <p>EmpSal : {!v.empsal}</p>
+        <p>EmpDEPT : {!v.empdept}</p>
+    </div>
+</aura:component>

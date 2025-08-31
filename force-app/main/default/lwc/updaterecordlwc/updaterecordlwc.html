@@ -1,0 +1,11 @@
+<template>
+    <lightning-card  title="Update record through recordapi Name">
+    <lightning-input type ="text" label="fName" value={fname} onchange={updatehandle2} name ="FirstName"></lightning-input>
+    <lightning-input type ="text" label="lname" value={lname}  onchange={updatehandle2} name="LastName"></lightning-input>
+    <lightning-input type ="text" label="Email" value={email}  onchange={updatehandle2}  name="Email" ></lightning-input>
+
+    <!--   Note in above attribute "name" you have to pass field api name as we have to use in updaterecord function
+    which only considered field api name  -->
+    <lightning-button label="update Record" onclick={updatehandle}></lightning-button>
+    </lightning-card>
+</template>

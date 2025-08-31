@@ -1,0 +1,18 @@
+<template>
+    <template if:false={customcheck}>
+        <lightning-card  variant="base">
+          
+         Search Next Approver
+            <c-parentofall-look-up  onselect3={handleselectedrecordidd}> </c-parentofall-look-up>
+             <div>
+                <lightning-button 
+                  variant="success"
+                  label="Proceed" 
+                  onclick={handleClick} 
+                ></lightning-button>
+             </div>
+        </lightning-card>
+       
+
+    </template>
+</template>

@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+ <!--    extends="c:extensiblesetattributetest"  -->
+	 <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+  <!--  <aura:set attribute="address1" value="808 State St" />-->
+    <aura:attribute name ="whatwe" type ="string"/>
+    <aura:attribute name ="testvalue" type ="string"/>
+    EEEEEEEEEEEEEEEEEEEEEE
+    <lightning:input type="date" name="input2" label="Date field with a predefined value" value="2020-09-07"/>
+        <lightning:input type="date" name="input3" label="Date field with ISO8601 formatted value" value="2020-09-07T00:00:00Z"/>
+     <lightning:input name="inp" label="Enter Value" value="{!v.testvalue}"  onchange="{!c.abc}"/>
+  
+     {!v.testvalue}
+</aura:component>

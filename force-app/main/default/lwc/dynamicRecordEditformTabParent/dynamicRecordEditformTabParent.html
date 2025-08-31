@@ -1,0 +1,10 @@
+<template>
+    <lightning-tabset variant="scoped" >
+        <template for:each={tablabels} for:item="tab">
+            <lightning-tab label={tab.Label} key={tab.Id} value={tab.Label}>
+             <c-dynamicrecordeditformchild record-id={recordId} object-api-name={tab.Label} fieldlist ={tab.FieldsapiName__c}   dependencycheck={tab.Dependency_check__c}> 
+             </c-dynamicrecordeditformchild>
+            </lightning-tab>
+        </template>
+    </lightning-tabset>
+</template>

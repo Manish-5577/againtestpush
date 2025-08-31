@@ -1,0 +1,44 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Lightning data table account data" icon-name="standard:account">
+    <div>
+    <lightning-button variant="brand" label="get Related data" title="titleName" onclick={handleClick}></lightning-button>
+    </div>
+    <div style="height: 300px;">
+        <lightning-datatable
+        key-field="id"
+        data={accdata}
+        show-row-number-column
+        row-number-offset={rowOffset}
+        columns={colmbb}
+        onrowaction={handleRowAction}>
+        </lightning-datatable>    
+    </div>
+    <template lwc:if={relatedcase}>
+        <div style="height: 300px;">
+        <lightning-datatable
+        key-field="id"
+        data={relatedcase}
+        show-row-number-column
+        row-number-offset={rowOffset}
+        columns={columncase}
+        onrowaction={handleRowAction}>
+        </lightning-datatable>    
+    </div>
+</template>    
+   <template lwc:if={relatedopp}>
+<div style="height: 300px;">
+        <lightning-datatable
+        key-field="id"
+        data={relatedopp}
+        show-row-number-column
+        row-number-offset={rowOffset}
+        columns={columnopp}
+        onrowaction={handleRowAction}>
+        </lightning-datatable>    
+    </div>
+ </template>
+    </div> 
+    </lightning-card>
+
+
+</template>

@@ -1,0 +1,6 @@
+<apex:page controller="pagereferenceclass" >
+    
+    <apex:form >
+     <apex:commandbutton action="{!saveMethod}" value="Click Me"></apex:commandbutton>
+ </apex:form>
+</apex:page>

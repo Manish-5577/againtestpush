@@ -1,0 +1,25 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+      
+      <div>
+        <!-- Card Body  -->
+        <lightning-input 
+          type="text"
+          label="test1"
+          required=true
+        ></lightning-input>
+        <lightning-input 
+          type="number" 
+          name="input1" 
+          label="test2" 
+          formatter="currency"
+          
+        ></lightning-input>
+        <lightning-button 
+          variant="brand"
+          label="check validaity" 
+          onclick={handleClick} 
+        ></lightning-button>
+      </div>
+    </lightning-card>
+</template>

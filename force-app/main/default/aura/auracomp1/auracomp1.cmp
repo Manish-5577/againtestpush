@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" extensible ="true">
+    <aura:attribute name ="test1" type ="string"  default="lalallaal" />
+  <!--  <aura:registerEvent name = "event1" type="c:auracomp1eve" /> -->
+     <aura:registerEvent name="event2" type="c:auracomp1eve"/>  
+ <!--    <aura:handler event="c:auracomp1eve" name = "event2"  action="{!c.firee}"/> -->
+    <lightning:input label ="input1" onchange="{!c.handlechange}" aura:id ="abc"  value ="{!v.test1}"/>
+   <!-- <c:auracomp2/> -->
+      <aura:attribute name="address1" type="String" />
+    setTagSuper address1: {!v.address1}<br/>
+</aura:component>

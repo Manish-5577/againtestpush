@@ -1,0 +1,7 @@
+<aura:component >
+	
+     <aura:registerEvent name ="firstcall" type="c:testingevent" />
+    <div>
+     <lightning:input name="input1" label="Enter some text" aura:id ="ff" onchange ="{!c.handlechange}" />
+    </div>
+</aura:component>

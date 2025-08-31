@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+  <aura:attribute name="messages" type="string" />
+   <lightning:messageChannel type="messageDemo1__c" aura:id="messageChannel" onMessage="{!c.messageHandler}"
+        scope="APPLICATION" />  
+    
+     
+    <lightning:card  title="This is Aura Component" >
+       
+        <p class="slds-p-horizontal_small">
+           Message received from lightning component 3 is {!v.messages}
+        </p>
+    </lightning:card>
+</aura:component>

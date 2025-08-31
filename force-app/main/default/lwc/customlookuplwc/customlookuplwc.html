@@ -1,0 +1,38 @@
+<template>
+    <template if:false={selectedrecord}>
+    <c-customsearchlwc onsearch={handleevent}></c-customsearchlwc>
+</template>
+
+<template if:false={selectedrecord}>
+    <template if:true={record}>
+       
+            <template for:each={record} for:item="rec">
+<c-recordlistloookup key={rec.id} record={rec} onselect ={handlerecdlistevent} iconname={iconname}  onselectnnn ={handlerecord}>
+</c-recordlistloookup>
+            </template>
+    </template>
+</template>
+<div class="slds-p-around_x-small">
+<template if:true={selectedrecord}>
+       <div class ="slds-combobox__form-element slds-input-has-icon slds-
+       input-hasicon_left-right" role="none">
+    
+    <span class="slds-icon_container slds-icon-standard-account
+    slds-combobox__input-entity-icon" title="Account">
+<lightning-icon icon-name={iconname} ></lightning-icon>
+</span>
+<input class="slds-input slds-combobox__input slds-combobox__input-value  " id="combobox-id-5" aria-controls="listbox-id-5"
+ role="textbox" type="text" placeholder="select an option"
+readonly="" value ={selectedrecord.Namesss} disabled/>
+<button class ="sicon_container slds-button slds-button_icon
+slds-input__icon slds-input__icon_right" title ="Remove selected option"
+onclick ={handleremove}>
+<lightning-icon icon-name="utility:close" size="small">
+
+</lightning-icon>
+
+</button>
+    </div>
+</template>
+</div>
+</template>

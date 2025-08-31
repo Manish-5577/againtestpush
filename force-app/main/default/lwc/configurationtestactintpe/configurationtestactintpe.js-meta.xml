@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__HomePage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__Tab</target>
+        <target>lightning__RecordAction</target>
+        <target>lightning__UtilityBar</target>
+        <target>lightningCommunity__Page</target>
+       <target>lightningCommunity__Default</target> 
+    </targets>
+    <targetConfigs>
+      
+        <targetConfig targets="lightning__RecordPage">
+           <property name="test1" type="String" label="enterededd!!!!!!!!111"/>
+           <property name="test2" type="String" label ="testingg" />
+           <objects>
+            <object>Account</object>
+          
+          </objects>
+
+          </targetConfig>
+      
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,32 @@
+<template>
+<lightning-card  variant="Narrow"  title="Hello" icon-name="standard:account">
+  <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+  <p class="slds-p-horizontal_small"> </p>
+  <div>
+       <lightning-input type="text" variant="standard" name="Search data" label="Search below data" placeholder="type here..."></lightning-input>
+  </div>
+  <table>
+    <thead>
+<tr>
+<th> Account idd a</th>
+<th> Account Name </th>
+</tr>
+</thead>
+<template if:true={initialdata} for:each={initialdata} for:item="con" for:index="index"> 
+   <tr key={con.Id}>
+          <td> {con.Id} </td>
+          <td> {con.Name}</td>
+   </tr>
+</template>
+   
+  </table>
+  <lightning-button-group>
+    <lightning-button label="Next"  onclick={handlenextclick} disabled={disablenextbutton}></lightning-button>
+    <lightning-button label="Prev"  onclick={handleprevclick} disabled ={disableprevbutton}></lightning-button>
+  </lightning-button-group>
+  <p slot="footer">Card Footer</p>
+</lightning-card>
+
+
+
+</template>

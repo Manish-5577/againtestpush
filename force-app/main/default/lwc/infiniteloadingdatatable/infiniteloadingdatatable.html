@@ -1,0 +1,47 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+          Infinte loading using datatable
+      </div>
+      <div slot="actions">
+    
+      </div>
+      <div slot="footer">
+    
+      </div>
+      <div>
+        <!-- Card Body  -->
+        <div style="height:500px">
+        <template lwc:if={datas}>
+            <lightning-datatable
+            key-field="id"
+            columns={columnss}
+            data={datas}  
+            enable-infinite-loading
+            onloadmore={loaddatahandler}
+          ></lightning-datatable>
+        </template>
+      
+        <template lwc:else>
+            Oops no data found
+        </template>
+    </div>
+       //////////////   infinite load using id approach
+    <div style="height:500px">
+        <template lwc:if={datas}>
+            <lightning-datatable
+            key-field="id"
+            columns={columnss}
+            data={databyid}  
+            enable-infinite-loading
+            onloadmore={loaddatahandlerbyid}
+          ></lightning-datatable>
+        </template>
+      
+        <template lwc:else>
+            Oops no data found
+        </template>
+    </div>
+      </div>
+    </lightning-card>
+</template>

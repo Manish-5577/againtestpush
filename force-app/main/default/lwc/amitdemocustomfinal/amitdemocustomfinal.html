@@ -1,0 +1,12 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Hello" icon-name="standard:contact">
+        <c-amitcustomlookup iconname="standard:contact" 
+            object-name="Contact"
+            searchfield="Name">
+        </c-amitcustomlookup>
+testtttttttttttt
+        <c-customllokupchildweb icon-name="standard:contact" s-object-api-name="Product2" label="Product"
+        onlookupupdate={handleLookupSelection} placeholder="Search Contact...">
+    </c-customllokupchildweb>
+    </lightning-card>
+</template>

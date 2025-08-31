@@ -1,0 +1,16 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+              Passing Value from child to parent using fired event 
+      </div>
+      <div>
+        
+        <lightning-input 
+          type="text"
+          label="Type any thing "
+          onchange={handlechange}
+        ></lightning-input>
+        
+      </div>
+    </lightning-card>
+</template>

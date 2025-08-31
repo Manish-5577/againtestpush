@@ -1,0 +1,22 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+         This is 4th component after removing applictaion scope 
+      </div>
+      whta@@@@@@@@@@ oosos{object22.firstname}{object22.lastname}
+      <div>
+       Message flowing from 1 to 4th component directly 
+       {receivedmssgfrom1stcompo}
+
+       <template for:each={objecttt} for:item="contact">
+        <li key={contact.firstname}>{contact.firstname}, {contact.lastname}</li>
+      </template>
+
+        <lightning-button 
+          variant="brand"
+          label="track observation" 
+          onclick={handlechange} 
+        ></lightning-button>
+      </div>
+    </lightning-card>
+</template>

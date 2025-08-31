@@ -1,0 +1,39 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	                                                                                                                                    
+    <aura:attribute name ="simpleRecordd" type="Object"/>
+    <aura:attribute name ="Accountdata" type="Account" default="{ 'sobjectType': 'Account' }"/>
+    <aura:attribute name ="record" type="Object"/>
+     <aura:attribute name ="recordError" type="String"/>
+    
+    <div>
+    what is the erorror!!!!! {!v.recordError}
+        !
+
+!fldd
+asdaadsadas!
+!
+sdsadasd!
+!asdsadsa
+!
+!
+sdsadsadsa!
+!sadasd
+    
+    </div>
+    <force:recordData  aura:id="recordeditor"   
+                      recordId ="0015j00001dbbOtAAI"
+                      targetRecord ="{!v.record}"
+                      targetFields="Industry,name"
+                      targetError ="{!v.recordError}"
+                      layoutType ="COMPACT"
+                      mode="EDIT"
+                      />
+    <div>
+            <force:inputField aura:id="firstname" value="{!v.Accountdata.Industry}" change="{!c.handleChange}"/>
+
+           <lightning:input label ="name" value ="{!v.simpleRecordd.Industry}"/>
+        <lightning:input label ="name" value ="{!v.simpleRecordd.Name}"/>
+    </div>
+    <lightning:button label ="SaveRecord" onclick = "{!c.handlessave}"/>
+   
+</aura:component>

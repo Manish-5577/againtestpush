@@ -1,0 +1,18 @@
+<template>
+    
+<lightning-input 
+  type="text"
+  label="Enter location "
+  onchange={handlechange}
+></lightning-input>
+    <lightning-button 
+      variant="success"
+      label="weather api" 
+      onclick={handleClick} 
+    ></lightning-button>
+    <div>
+         <template if:true={imglink}>
+            <img src={imglink} alt="" class ="abcd">
+         </template>
+    </div>
+</template>

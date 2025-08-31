@@ -1,0 +1,23 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+          Fetch Account Details
+      </div>
+     
+      <div>
+       
+        <lightning-button 
+      variant="success"
+      label="fetch data" 
+      onclick={handleclick} 
+    ></lightning-button>
+
+    <lightning-datatable
+      key-field="id"
+      data={data}
+      columns={columns}
+    ></lightning-datatable>
+      </div>
+    </lightning-card>
+    
+</template>

@@ -1,0 +1,46 @@
+<template>
+<lightning-card icon-name="standard:account" variant="base">
+  <div slot="title" style="color:crimson">
+     All  Beer at One PLace !!!!!!!!!!!
+  </div>
+
+  <div>
+  
+    <div style="border: 2px solid rgb(248, 8, 8); width:30px; height:35px;border: radius 100%;margin-left:1535px;
+margin-bottom: -5px;
+text-align:center;
+font-size: 19px;
+">
+<strong class="slds-m-top_small" style="text-align:center; vertical-align:center; color:rgb(253, 130, 7)">{totalitemincart}</strong>
+
+</div>
+<div style="margin-left: 1513px">
+    <a href="Javascript:void(0);" onclick={navigatetocartdetail}>
+<img src={ff}  height="30" width="50"/>
+</a>
+</div>
+    <div>
+    <c-beersearchcomp onreciveusertext={searchbeer}>
+    </c-beersearchcomp>
+</div>
+
+<div>
+
+    <template lwc:if={beerRecords}>
+        <div class="slds-grid slds-wrap">
+        <template for:each={beerRecords} for:item="item">
+            <div class="slds-col slds-size_1-of-3"  key={item.Id}>
+                <span> <c-beer-tilecomp  beer-record={item} onbeerincart={handlecart}  ></c-beer-tilecomp></span>
+                </div>
+       
+    </template>
+</div>
+   
+    </template>
+   
+    </div>
+
+</div>
+</lightning-card>
+   
+</template>

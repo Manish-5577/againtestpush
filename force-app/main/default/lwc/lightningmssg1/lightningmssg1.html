@@ -1,0 +1,22 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+          this is 1st component
+      </div>
+     
+      <div>
+        <lightning-input 
+        type="text"
+        label="Type something"
+        onchange ={handlechange}
+      ></lightning-input>
+      <div>
+        message reeived from 3rd component {mssgreceivedfrom3rdcomponent}
+      </div>
+      <div>
+      <c-lightningmssg2></c-lightningmssg2>
+    </div>
+      </div>
+    </lightning-card>
+
+</template>

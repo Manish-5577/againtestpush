@@ -1,0 +1,20 @@
+<template>
+
+
+<template lwc:if={accountdata}>
+   <lightning-datatable
+    key-field="id"
+    data={accountdata}
+    show-row-number-column
+    row-number-offset={rowOffset}
+    hide-checkbox-column
+    columns={columns}
+    onrowaction={handleRowAction}>
+</lightning-datatable>
+</template>
+
+<template lwc:else>
+   No Data Found
+</template>
+
+</template>

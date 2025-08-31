@@ -1,0 +1,27 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+          Configuration testtindex test3333@@
+      </div>
+      <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phonee</th>
+        <th>Email</th>
+        <th>Index</th>
+      </tr>
+    </thead>
+    <tbody>
+    <template for:each={contact} for:item="con" for:index="index">
+     <tr key={con.name}>
+      <th>{con.name}</th>
+      <th>{con.phone}</th>
+      <th>{con.email}</th>
+      <th>{index}</th>
+     </tr>
+    </template>
+    </tbody>
+  </table>
+    </lightning-card>
+</template>

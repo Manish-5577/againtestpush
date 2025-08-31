@@ -1,0 +1,32 @@
+<template>
+    <div>
+        <lightning-button 
+          variant="brand"
+          label="Create Recordd" 
+          onclick={handleClick} 
+        ></lightning-button>
+    </div>
+    <div>
+        <h1>updating record of opportunity</h1>
+        <lightning-input 
+          type="Name"
+          name ="Name"
+          label="Opportunity Name"
+          value ={Name}
+          onchange={handlechange}
+        ></lightning-input>
+        <lightning-input 
+          type="number" 
+          name="Amount" 
+          value ={ammount}
+          onchange={handlechange}
+          label="Opportunity Amount" 
+          formatter="currency"
+        ></lightning-input>
+        <lightning-button 
+          variant="success"
+          label="Update record" 
+          onclick={handleupdate} 
+        ></lightning-button>
+    </div>
+</template>

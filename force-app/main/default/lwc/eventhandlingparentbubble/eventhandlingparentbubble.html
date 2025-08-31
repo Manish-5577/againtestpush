@@ -1,0 +1,26 @@
+<template>
+    <lightning-layout multiple-rows="true">
+        <lightning-layout-item size ="5">
+            <lightning-card title="eventhandling using bubble approach">
+              <lightning-input 
+                type="text"
+                label="call by reference"
+                onchange={testingcallbyreefernce}
+              ></lightning-input>
+    <ul>
+  <template for:each={meetingroominfos} for:item="room">
+<li key ={room.roomname}>
+  <c-eventhandlingbubbleapproach  meetingroominfo ={room}  booleaneg ></c-eventhandlingbubbleapproach>
+</li>
+   </template>
+    </ul>
+    {hh}
+</lightning-card>
+</lightning-layout-item>
+<lightning-layout-item>
+    <lightning-card title="event handling ">
+    selected tile is {selectedroom};
+</lightning-card>
+</lightning-layout-item>
+</lightning-layout>
+</template>

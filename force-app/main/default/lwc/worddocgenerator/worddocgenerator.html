@@ -1,0 +1,14 @@
+<!-- <template>
+    <div class="slds-p-bottom_x-large">
+        <lightning-button class="slds-float_left slds-p-right_medium" onclick={startDocumentGeneration} label="Build Document"></lightning-button>
+        <a href={downloadURL} download="ContactList.docx" class="slds-hide slds-button slds-button_brand slds-float_left">Download Document</a>
+    </div>
+</template> -->
+
+<template>
+    <lightning-card title="Generate Word Document">
+        <div class="slds-p-around_medium">
+            <lightning-button label="Download Word" onclick={generateDoc}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

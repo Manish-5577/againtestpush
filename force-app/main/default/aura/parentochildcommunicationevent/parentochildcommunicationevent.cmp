@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+	<!--this is sthe parent component in parenttochildcommnication to check parent can send message to child using application event -->
+    <aura:registerEvent name = "one" type = "c:eeparentochildcommunicationevent" />
+       <lightning:navigation aura:id="navService"/>
+    <aura:attribute name="pageReference" type="Object"/>
+    <lightning:button label = "checkparent" onclick ="{!c.call}" />
+     <lightning:button label = "navigatetocomponent" onclick ="{!c.callnavigation}" />
+    <c:child_Of_parentochildcommunicationevent/>
+</aura:component>

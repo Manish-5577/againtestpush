@@ -1,0 +1,8 @@
+<aura:component >
+    <aura:handler event ="c:evenapplitype" action = "{!c.invoke}" phase="bubble"/>
+    <aura:attribute name = "receivedmssg" type ="string"/>
+    <div>
+    <h1>Received Message is :{!v.receivedmssg}</h1>
+    </div>
+    <c:source1application/>
+</aura:component>

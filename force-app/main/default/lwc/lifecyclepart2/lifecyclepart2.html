@@ -1,0 +1,54 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+          Card Title
+      </div>
+      <div>
+                <lightning-button 
+                  variant="brand"
+                  label="connectedcheck" 
+                  onclick={handleconnected} 
+                ></lightning-button>
+            </div>
+            <div>
+                after click on above button {connectedvalue}
+            </div>
+    </lightning-card>
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+          Card Title
+      </div> 
+            <div>
+                <div>
+                    <lightning-button 
+                      variant="brand"
+                      label="renderedcheck" 
+                      onclick={handlerendered} 
+                    ></lightning-button>
+                </div>
+                <div>
+                    after click on above button {renderedvalue}
+                </div>
+            </div>     
+    </lightning-card>
+   <lightning-card icon-name="standard:account" variant="base">
+     <div slot="title">
+         child cmponent
+     </div>
+     <div slot="actions">
+   
+     </div>
+     <div slot="footer">
+   
+     </div>
+     <div>
+     <c-lifecycle-l-w-c publicvar ={assignvaluetopublicvar} oneventtest ={handleevent}></c-lifecycle-l-w-c>
+       <lightning-input 
+         type="entersomething"
+         label="type something"
+         required=true
+         onchange={handlllechanaee}
+       ></lightning-input>
+     </div>
+   </lightning-card>
+</template>

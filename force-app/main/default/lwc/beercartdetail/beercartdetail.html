@@ -1,0 +1,135 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+          Cart Detail
+      </div>
+      
+           <template lwc:if={hideShippingcart}>
+              <lightning-layout multiple-rows>
+                <lightning-layout-item size="9" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="9" >
+                 <template if:true={addresss} for:each={addresss} for:item="add" for:index="index">
+                 <li key={add.Id}>
+                      <c-beershowaddress address ={add}  indexx={index} onnavigatetobeershowaddress={hidethiscomp} ondeliverwhichaddress={showselectedaddress}></c-beershowaddress>
+                 </li>
+                 
+              </template>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="3">
+                 <template lwc:if={selectedaddresfordelivery}>
+                  <div>Your Selected Address !!!!!!!!!!!!! </div>
+                  <p> City: {selectedaddresfordelivery.City__c}</p></br>
+                  <p> Street:{selectedaddresfordelivery.Street__c} </p></br>
+                 <p> State: {selectedaddresfordelivery.State__c}</p></br>
+                 <p> Country: {selectedaddresfordelivery.Country__c}</p></br>
+                 <p>Postal Code : {selectedaddresfordelivery.Postal_Code__c} </p></br>
+              </template>
+                </lightning-layout-item>
+                                <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="12">
+
+                <div>
+                 <lightning-button variant="brand" label="Place order" title="Place orderr" onclick= {handleorder} ></lightning-button>
+            </div>
+             </lightning-layout-item>
+              </lightning-layout>
+             
+              
+              
+           </template>
+         
+<template lwc:elseif={showaddresscomp}>
+            <c-beeraddresscomp  onnavigateshowaddresscomp={showaddreess}></c-beeraddresscomp>
+</template>
+
+           <template lwc:else>
+            
+            <div class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="9" small-device-size="6" medium-device-size="4" large-device-size="9" padding="around-small">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center abc">SHOPPING CART</div>
+                </lightning-layout-item>
+                <lightning-layout-item size="9" small-device-size="6" medium-device-size="4" large-device-size="3" padding="around-small">
+              <div class="center">
+                     <b>Subtotal for quantity {totalitem}: </b>
+                     &nbsp;
+                     <lightning-formatted-number 
+                       value={totalamount}
+                       format-style="currency"
+                       currency-code="USD"
+                       currency-display-as="symbol"
+                     ></lightning-formatted-number>
+              </div>
+              <div class="slds-m-top_small">
+               <strong>Have a coupon ?</strong>
+               <a href="javaScript:void(0):" onclick={handlecoupon}>
+                Apply here </a>
+              </div>
+              <template lwc:if={showinput}>
+               <div class="slds-m-top_small">
+                      <lightning-input type="text" variant="standard" onchange={handlecouponchange} onkeypress={handlecouponchange} name="coupon" label="Enter Coupon" placeholder="type here..."></lightning-input>      
+                </div>
+                <div class="slds-m-top_small">
+                  <lightning-button variant="brand" label="Apply Coupon" title="Appp!!!!!" onclick={applycoupun}></lightning-button>
+                </div>
+              </template>
+              
+              
+              <div class="slds-m-top_small">
+            <lightning-button-group>
+              <lightning-button label="Continue Sopping" variant="natural" onclick={navigatetosite}></lightning-button>
+              
+              <lightning-button label="Proceed Checkout" variant="natural" onclick={handleproceed}></lightning-button>
+            </lightning-button-group>
+              </div>
+</lightning-layout-item>
+                
+                   
+                    <lightning-layout-item size="3" small-device-size="6" medium-device-size="4" large-device-size="3" padding="around-small">
+                   <div class=" slds-p-around_medium slds-text-align_center abc">Item Name</div>
+                </lightning-layout-item>
+                    <lightning-layout-item size="3" small-device-size="6" medium-device-size="4" large-device-size="3" padding="around-small">
+                    <div class=" slds-p-around_medium slds-text-align_center abc">Price</div>
+                </lightning-layout-item>
+                <lightning-layout-item size="2" small-device-size="6" medium-device-size="4" large-device-size="2" padding="around-small">
+                    <div class=" slds-p-around_medium slds-text-align_center abc">Quantity</div>
+                </lightning-layout-item>
+                <lightning-layout-item size="1" small-device-size="6" medium-device-size="4" large-device-size="1" padding="around-small">
+                    <div class=" slds-p-around_medium slds-text-align_center abc">Action</div>
+                </lightning-layout-item>
+                
+                
+                <lightning-layout-item size="9" small-device-size="6" medium-device-size="4" large-device-size="9" padding="around-small">
+                  
+                    <template if:true={cartitems}>
+                        <template for:each={cartitems} for:item="acc">
+                            
+                           <c-beercartdetailchild key={acc.Id} item={acc}  ondeleteecartitem={removecartitemfromscreen}></c-beercartdetailchild>
+                        </template>
+                    </template>
+                </lightning-layout-item>
+                <lightning-layout-item size="9" small-device-size="6" medium-device-size="4" large-device-size="9" padding="around-small">
+                  <div class="center">
+                    <lightning-button class="background"
+                      variant="destructive"
+                      label="Continue Shopping" 
+                      onclick={navigatetosite} 
+                    ></lightning-button> &nbsp;&nbsp;&nbsp;
+                    <lightning-button 
+                   class="background"
+                    label="Proceed CheckOut" 
+                    variant="destructive"
+                    onclick={handleproceed} 
+                  ></lightning-button>
+                </div>
+                    </lightning-layout-item>
+               
+
+            </lightning-layout>
+             </div>
+           </template>
+       
+  
+    
+        
+      
+    </lightning-card>
+</template>

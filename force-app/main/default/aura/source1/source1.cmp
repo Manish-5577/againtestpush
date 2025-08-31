@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+      
+     
+    <c:source4/>
+<c:source3/> 
+    <c:source2/>
+ <!--    <aura:registerEvent name = "one" type = "c:testeventt"/>   -->
+   <aura:handler    event ="c:testeventt" action = "{!c.invoke11}"  />
+  <!--  <lightning:button label ="sclick me..." onclick ="{!c.handleclcik}"/>  -->
+</aura:component>

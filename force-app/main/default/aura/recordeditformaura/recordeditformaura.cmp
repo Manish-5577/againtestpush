@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	
+    
+<div>
+    <p class ="abc">
+Lightning  record edit form     
+    </p>
+    </div>    
+ <lightning:recordEditForm recordId="{!v.recordId}" objectApiName="Lead">
+        <lightning:messages />
+        <lightning:outputField fieldName="Id" />
+        <lightning:inputField fieldName="FirstName" />
+        <lightning:inputField fieldName="LastName" />
+        <lightning:inputField fieldName="Email" />
+     <lightning:inputField fieldName="LeadSource" />
+      <lightning:inputField fieldName="Status" />
+        <lightning:button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update" />
+    </lightning:recordEditForm>    
+    
+    
+</aura:component>

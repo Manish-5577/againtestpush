@@ -1,0 +1,4 @@
+<aura:component >
+    <c:source2application/>
+    <aura:handler event ="c:evenapplitype" action = "{!c.invoke}" phase="capture"/>
+</aura:component>

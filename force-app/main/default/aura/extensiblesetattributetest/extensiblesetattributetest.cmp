@@ -1,0 +1,5 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" extensible = "true">
+	 <aura:attribute name="address1" type="String" />
+    <aura:attribute name ="test" type ="string"/>
+    setTagSuper address1: {!v.address1}<br/>
+</aura:component>

@@ -1,0 +1,21 @@
+<template>
+    
+  <div>
+     <lightning-input type="text" variant="standard" name="City__c" label="City" value ={address.City__c} placeholder="type here..." onchange={handleaddresschange}></lightning-input>
+    </div>
+       <div>
+     <lightning-input type="text" variant="standard" name="Country__c" label="Country" value ={address.Country__c} placeholder="type here..." onchange={handleaddresschange}></lightning-input>
+    </div>
+       <div>
+     <lightning-input type="text" variant="standard" name="Postal_Code__c" label="Postal Code" value ={address.Postal_Code__c} placeholder="type here..." onchange={handleaddresschange}></lightning-input>
+    </div>
+       <div>
+     <lightning-input type="text" variant="standard" name="State__c" label="State" value ={address.State__c} placeholder="type here..." onchange={handleaddresschange}></lightning-input>
+    </div>
+       <div>
+     <lightning-input type="text" variant="standard" name="Street__c" label="Street" value ={address.Street__c} placeholder="type here..." onchange={handleaddresschange}></lightning-input>
+    </div>
+     <div  class="center">
+     <lightning-button variant="brand" label="Save" title="Saveii" onclick={handleClick}></lightning-button>
+     </div>
+</template>

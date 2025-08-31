@@ -1,0 +1,21 @@
+<aura:component>
+
+  <lightning:card  title="Aura Method Demo">
+        
+        <p class="slds-p-horizontal_small">
+            <lightning:input name="Empname" label="Employe Name" aura:id ="name" />
+        </p>
+      <p class="slds-p-horizontal_small">
+            <lightning:input name="empdept" label="Employee Department" aura:id ="dept" />
+        </p>
+      <p class="slds-p-horizontal_small">
+            <lightning:input name="empsal" label="Employee Salary" type="number"  aura:id ="sal"/>
+        </p>
+      <aura:set attribute="actions">
+            <lightning:button label="Submit" onclick ="{!c.sendmssg}"/>
+          <lightning:button label="Submit22" onclick ="{!c.callAuraMethodServerTrip}"/>
+        </aura:set>
+    </lightning:card>
+    <c:auramethodchild aura:id="child"/>
+
+</aura:component>

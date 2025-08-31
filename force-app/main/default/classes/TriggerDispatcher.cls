@@ -1,0 +1,40 @@
+public class TriggerDispatcher {
+
+      public static boolean recursive = true;
+    
+     public static void run(ITriggerHandler handler, string triggerName){
+         
+        //Check if the trigger is disabled
+ /*       if (handler.IsDisabled()){
+            return;
+        }*/
+         
+        //Get the trigger active information from custom settings by trigger name
+   //     Boolean isActive = TriggerSetting__c.getValues(triggerName).isActive__c;
+         
+    //    if(isActive){
+            //Check trigger context from trigger operation type
+            switch on Trigger.operationType {
+                 
+                when BEFORE_INSERT {
+                    //Invoke before insert trigger handler
+                    handler.beforeInsert(trigger.new);
+                }
+                when AFTER_INSERT {
+                    //Invoke after insert trigger handler
+                    handler.afterInsert(trigger.new, trigger.newMap);
+                }
+                when BEFORE_UPDATE {
+                    //Invoke before update trigger handler
+                    handler.beforeUpdate(trigger.new, trigger.newMap, trigger.old, trigger.oldMap);
+                }
+                when AFTER_UPDATE {
+                    //Invoke after update trigger handler
+                    handler.afterUpdate(trigger.new, trigger.newMap, trigger.old, trigger.oldMap);
+                }
+               
+               
+            }
+        }
+  //  }
+}

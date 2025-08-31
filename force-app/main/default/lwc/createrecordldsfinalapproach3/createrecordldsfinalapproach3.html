@@ -1,0 +1,23 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+        <div slot="title" class="change">
+          CREATE RECORD approach 3 without using hard field refernce
+        </div>
+        <div>
+          <lightning-layout multiple-rows="true" class= "mydiv">
+              <lightning-layout-item size="6">
+              <lightning-input  label = "Account_Name"  name="Name"  value={accountrecord.Name} onchange ={handlechange}></lightning-input>
+              <lightning-input label = "Account_Phone"  name ="Phone"  value={accountrecord.Phone}  type="Phone" onchange ={handlechange}></lightning-input>
+              <lightning-input label = "Account_Security check"  name ="securitycheck__c"  value={accountrecord.securitycheck__c}  type="text" onchange ={handlechange}></lightning-input>
+
+              <lightning-button label ="createaccount" variant="brand" onclick={createaccount}></lightning-button> 
+          </lightning-layout-item>
+      </lightning-layout>
+        </div>
+        {amount}
+        {createddate}
+        {amount22}
+        {createddate22}
+     ammmmm:   {amounteee}
+      </lightning-card>
+</template>

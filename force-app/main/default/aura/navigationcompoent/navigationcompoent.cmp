@@ -1,0 +1,40 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction,lightning:isUrlAddressable" access="global" >
+	    <aura:attribute name="a_Name" type="String" />
+    <aura:attribute name="url" type="String"/>
+    <aura:attribute name="pageReference" type="Object"/>
+      <aura:attribute name="data" type="String"/>
+    <lightning:navigation aura:id="navService"/>
+   <div>
+    navigation componentntntntn
+    </div><div>
+    navigation componentntntntn
+    </div><div>
+    navigation componentntntntn
+    </div>
+  
+	<!-- a_Name can be replaced with even a Id that is passed as parameter = Please use proper naming convention -->
+	
+ <!--   <aura:handler name="init" value="{!this}" action="{!c.do_Init}"/>  -->
+	
+ <!--   <aura:handler name="change" value="{!v.pageReference}" action="{!c.do_Init}"/>  -->
+<!--	<aura:handler name="change" value="{!v.pageReference}" action="{!c.onPageReferenceChange}"/>   -->
+{!v.url}
+    Hello {!v.a_Name}.
+    
+    <div>
+    <a href="{!v.url}">Url set to Accounthome </a>
+        ===> 
+</div>
+    <div>
+        {!v.url}
+            <p><lightning:formattedUrl value="https://my/path" label="Contact ID" tooltip="Go to Contact's recordId" /></p>
+</div>
+    <lightning:button variant="brand" label="navigate to component" title="Brand action" onclick="{!c.handleClick}" />
+       <lightning:button variant="brand" label="genrate url using pagerefrnce" title="Brand action" onclick="{!c.handlepaagereference}" />
+    <div>
+        
+    <div aura:id="dtag" onpaste="{!c.handlePaste}">
+        <lightning:input name="inp" label="Enter Value" value="{!v.data}"/>
+    </div>
+</div>
+</aura:component>

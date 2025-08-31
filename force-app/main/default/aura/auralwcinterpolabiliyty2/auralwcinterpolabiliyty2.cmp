@@ -1,0 +1,22 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	  <aura:attribute name="selectedmeetingroom" type ="object"/>
+    <aura:attribute name ="testfromaura" type ="string"/>
+     <aura:handler  name="init" value="{!this}" action="{!c.doinit}"/>
+    <c:aurapubsub aura:id="pubsubname" onready="{!c.handleonready}"/>
+     <c:aurapubsub aura:id="pubsubname2" onready="{!c.testauraa}"/>
+    <lightning:card title="Aura Pub Sub interpolability between lwc and aura ">
+    You have selected meeting room :{!v.selectedmeetingroom.roomname}
+    <p>
+       Room Capacity : {!v.selectedmeetingroom.roomcapacity} 
+        </p>
+        
+        <div>
+            <lightning:button label ="testfire" onclick ="{!c.testing}"/>
+        </div>
+        <p>
+        aura fire event : {!v.testfromaura}
+        </p>
+    </lightning:card>
+    
+  
+</aura:component>

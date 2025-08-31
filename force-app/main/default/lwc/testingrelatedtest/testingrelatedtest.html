@@ -1,0 +1,65 @@
+<template>
+<lightning-card  variant="Narrow"  title="account data revised6" icon-name="standard:account">
+   <table>
+    <thead>
+        <tr>
+            <th> Id </th>
+            <th> Name </th>
+            <th> Createddate </th>
+        </tr>
+    </thead>
+    <tbody>
+        <template if:true={accdata} for:each={accdata} for:item="acc" for:index="index">
+           <tr key={acc.Id}>
+         <td><lightning-input   data-id="checkbox"  type="checkbox" variant="standard" value={acc}  data-index={index} onchange={handleinputcheck}  name="name" ></lightning-input>  </td>   
+                 <td>{acc.Id}</td>
+                <td>{acc.Name}</td>
+                <td>{acc.Createddate}</td>
+                <td><lightning-button variant="brand" label="View contact" title="titlName" data-index={index} onclick={handlecontact}></lightning-button></td>
+                <td><lightning-button variant="brand" label="view opportunity" title="titleName" onclick={handleopp}></lightning-button></td>
+           </tr>
+        </template>
+    </tbody>
+   </table>
+
+   <!-- wireGetRelatedListRecordsBatch.html -->
+    <!-- <template lwc:if={results}>
+        <template for:each={results} for:item="result">
+    <lightning-card
+      key={result.result.listReference.relatedListId}
+      title={result.result.listReference.relatedListId}>
+      <template lwc:if={result.result.count}>
+        <div class="slds-m-around_medium">
+          <template for:each={result.result.records} for:item="rec">
+            <p key={rec.fields.Name.value}>{rec.fields.Name.value}</p>
+          </template>
+        </div>
+      </template>
+    </lightning-card>
+  </template>
+    </template> -->
+  <lightning-button variant="brand" label="check input" title="titleName" onclick={handleClick}></lightning-button>
+  hhfhfhf!!!!!!!!!!!!1
+
+  <template lwc:if={bool}>
+
+   <template  if:true={mapconaccn} for:each={mapconaccn} for:item="item">
+<div key={item.key} class="slds-box slds-m-around_small">
+  oneee
+<ul>
+<template for:each={item.Contacts} for:item="subItem">
+<li key={subItem.id}>
+
+{subItem.Name}
+</li>
+</template>
+</ul>
+</div>
+</template>
+
+  </template>
+  
+
+
+       </lightning-card> 
+</template>

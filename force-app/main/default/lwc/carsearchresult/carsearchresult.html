@@ -1,0 +1,22 @@
+<template>
+    <lightning-card>
+<lightning-layout multiple-rows="true" horizontal-align="center">
+
+<template if:true={carsfound}>
+<template for:each={cars} for:item="car">
+<lightning-layout-item key={car.Id} padding="around-small" size="12" small-device-size="6" large-device-size="3" medium-device-size="4" >
+ <!--   <img src={car.Picture__c} >   -->
+   
+<c-cartile cars={car}  onselectedcartile={getslecetdcarid}  selectedacaridtocartiles={selectedacaridtocartile}></c-cartile> 
+  
+</lightning-layout-item>
+</template>
+</template>
+
+<template if:false={carsfound}>
+   No cars Found
+</template>
+
+</lightning-layout>
+    </lightning-card>
+</template>

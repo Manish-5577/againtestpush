@@ -1,0 +1,33 @@
+<template>
+    
+<lightning-card icon-name="standard:account" variant="base">
+  <div slot="title">
+      Unnamed slot
+  </div>
+  
+  <div>
+    <!-- Card Body  -->
+    <slot></slot>
+  </div>
+</lightning-card>
+
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+          named slot
+      </div>
+     <slot>
+
+     </slot>
+      <div>
+        <!-- Card Body  -->
+        <slot name="roominfo">
+
+        </slot>
+        <p>First Name: <slot name="firstName">Default first name</slot></p>
+        <p>Last Name: <slot name="lastName">Default last name</slot></p>
+       <slot></slot>
+      </div>
+    </lightning-card>
+    
+     
+</template>

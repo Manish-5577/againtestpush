@@ -1,0 +1,27 @@
+<template>
+    
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+          Account Data
+      </div>
+      
+      <div>
+       <lightning-button 
+         variant="base"
+         label="Click Here TO See Data" 
+         onclick={handldedata} 
+       ></lightning-button>
+        <lightning-datatable
+          key-field="id"
+          data={data}
+          columns={columns}
+        ></lightning-datatable>
+      </div>
+      <div>
+        <lightning-button-group>
+          <lightning-button label="Next" onclick={handlenext}></lightning-button>
+          <lightning-button label="Previous" onclick ={handlePrevious}></lightning-button> 
+        </lightning-button-group>
+      </div>
+    </lightning-card>
+</template>

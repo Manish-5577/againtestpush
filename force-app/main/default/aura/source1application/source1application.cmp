@@ -1,0 +1,4 @@
+<aura:component >
+     <aura:registerEvent name = "one" type = "c:evenapplitype" />
+    <lightning:button label ="press!!!!!!..." onclick="{!c.sendmessage}"/>
+</aura:component>

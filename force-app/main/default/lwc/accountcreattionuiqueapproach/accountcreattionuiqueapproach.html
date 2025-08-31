@@ -1,0 +1,70 @@
+<template>
+
+  <c-accountandrelatedconopp></c-accountandrelatedconopp>
+  <lightning-button 
+    variant="base"
+    label="get currency" 
+    onclick={handleClick2} 
+  ></lightning-button>
+<lightning-card icon-name="standard:account" variant="base">
+  <div slot="title">
+     Account creation using Normal Apex call 
+  </div>
+  <div>
+    <lightning-input 
+      type="text"
+      label="Account Name"
+      name="Name"
+      placeholder ="type here name"
+       value={accountrecord.Name} 
+      onchange={handlechange}
+    ></lightning-input>
+  </div>
+  <div>
+    <lightning-combobox
+    name="Industry"
+    label="Industry"
+    value={accountrecord.Industry}
+    placeholder="Select Industry"
+    options={industryy}
+    onchange={handlechange}
+     ></lightning-combobox>
+  </div>
+  <div>
+    <lightning-combobox
+    name="Rating"
+    label="Rating"
+    value={accountrecord.Rating}
+    placeholder="Select Rating "
+    options={rating}
+    onchange={handlechange}
+    ></lightning-combobox>
+  </div>
+  <div>
+    <lightning-combobox
+    name="securitycheck__c"
+    label="Security Check"
+    value={accountrecord.securitycheck__c}
+    placeholder="Select security "
+    options={securitycheck}
+    onchange={handlechange}
+    ></lightning-combobox>
+  </div>
+  <div>
+    <lightning-combobox
+    name="stage__c"
+    label="Stage"
+    value={accountrecord.stage__c}
+    placeholder="Select Stage "
+    options={stage}
+    onchange={handlechange}
+    ></lightning-combobox>
+  </div>
+  <lightning-button 
+    variant="Success"
+    label="Create Account" 
+    onclick={handleClick} 
+  ></lightning-button>
+</lightning-card>
+
+</template>

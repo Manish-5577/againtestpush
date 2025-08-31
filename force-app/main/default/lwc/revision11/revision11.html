@@ -1,0 +1,44 @@
+<template>
+        <div class = "test2">hello test {name.age} </div>
+        <div class = "test1">hello test {name.avg} </div>
+        <lightning-input type="text" label="Enter some text" onchange ={chekit}></lightning-input>
+        <lightning-input  type="checkbox" label ="click on it to view list " onchange ={test}></lightning-input>
+        <div> 
+            <p>hey buddy {testvar}</p>
+        </div>
+
+        <lightning-input type ="text" onchange ={tracking} label="kuch bhi "></lightning-input>
+        <template if:true={check}>
+            <template  for:each={citylist} for:item="city">
+                <p key ={city.name}>{city.name} </p>
+                    </template>
+        </template>
+        <template if:false={check}>
+            <p>im not there</p>  
+        </template>
+
+       <lightning-card>
+        <lightning-layout  multiple-rows="true">
+             <lightning-layout-item  size ="12">
+                <lightning-input   type = "number" name ="firstno" onchange={checkno}></lightning-input>
+             </lightning-layout-item>
+             <lightning-layout-item   size ="12">
+                <lightning-input   type = "number"  name ="secondno"  onchange={checkno}></lightning-input>
+             </lightning-layout-item>
+             <lightning-layout-item   size ="12">
+                <lightning-button-group>
+                    <lightning-button-icon icon-name="utility:add" variant="border-filled" alternative-text="Delete" class="paddings" onclick ={add}></lightning-button-icon>
+                    <lightning-button-icon icon-name="utility:ban" variant="border-filled" alternative-text="Settings" class ="paddings" onclick ={Subtract}></lightning-button-icon>
+                    <lightning-button-icon icon-name="utility:close" variant="border-filled" alternative-text="Settings" class ="paddings" onclick ={mult}></lightning-button-icon>
+                    <lightning-button-icon icon-name="utility:anywhere_alert" variant="border-filled" alternative-text="Settings" class ="paddings" onclick ={div}></lightning-button-icon>
+                </lightning-button-group>
+
+             </lightning-layout-item>
+             <lightning-layout-item>
+                <div>result is {result}</div>
+             </lightning-layout-item>
+        </lightning-layout>
+          
+          
+       </lightning-card>
+    </template>

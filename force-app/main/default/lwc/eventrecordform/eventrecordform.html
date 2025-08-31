@@ -1,0 +1,87 @@
+<template>
+
+    <lightning-card>
+   <lightning-tabset  active-tab-value="event">
+            <lightning-tab label="Event Info" value="event">
+                <lightning-record-form
+                record-id={recordId}
+                object-api-name="Event__c"
+                layout-type="Full"
+                columns="2"
+               
+            >
+            </lightning-record-form>
+            </lightning-tab>
+            <lightning-tab label="Speaker Info" value ="speaker" title="2nd tab extended title" onactive={showspeakerlist}>
+
+                <slot>
+                    <lightning-button 
+                      variant="brand"
+                      label="Create Speaker" 
+                      onclick={createspeaker} 
+                    ></lightning-button>
+                </slot>
+                <template if:true={speakerlist}>
+                   
+                <lightning-datatable
+                key-field="id"
+                data={speakerlist}
+                columns={columns}>
+        </lightning-datatable>
+    </template>
+    <template if:false={speakerlist}>
+  There is no record exist
+    </template>
+    <template for:each={speakerlist} for:item="item">
+        <p key={item.Id}>    <c-speakertileforeventproject speaker={item}></c-speakertileforeventproject>
+        </p>
+    </template>
+      
+            </lightning-tab>
+            <lightning-tab label="Loction Info" value ="location" onactive ={showlocation}>
+                <template if:true ={loction}>
+
+                    <template for:each={loction} for:item="acc">
+                        <p key={acc.Id}>
+                           
+                            <lightning-formatted-address
+                            street={acc.Location__r.Street__c}
+                            city={acc.Location__r.City__c}
+                            province={acc.Location__r.State__c}
+                            postal-code={acc.Location__r.Postal_Code__c}
+                        ></lightning-formatted-address>
+                        </p>
+                    </template>
+                  
+                 
+                </template>
+                <template if:false ={loction}>
+                    testtsing
+                </template>
+            </lightning-tab>
+            <lightning-tab label="Attendee Info" value="attende" onactive ={showattendeeinfo}>
+                <slot>
+                    <lightning-button 
+                      variant="brand"
+                      label="Create Attendee" 
+                      onclick={createattende} 
+                    ></lightning-button>
+                </slot>  
+           <template if:true={attendeelist}>
+            <lightning-datatable
+            key-field="id"
+            data={attendeelist}
+            columns={columnsattende}>
+    </lightning-datatable>
+   </template>
+              <template if:false ={attendeelist}>
+                       No record Exist
+              </template>
+               
+    
+            </lightning-tab>
+        </lightning-tabset>
+
+
+</lightning-card>
+</template>

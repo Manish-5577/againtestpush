@@ -1,0 +1,17 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+        <div slot="title">
+           GET Record without hard reference and field use
+        </div>
+        <div>
+          <template if:true={datas}>
+         <p class ="change">Name of the contact :{name}</p>
+         <p class ="change">Phone of the contact :{phone}</p>
+         <p class ="change">Email of the contact :{email}</p>
+         <!-- <p class ="change">Financial Year of the contact :{financialyear}</p> -->
+         
+
+      </template>
+        </div>
+      </lightning-card>
+</template>

@@ -1,0 +1,33 @@
+<template>
+
+    <template if:true={errorMssgToRender}>
+        <div>
+            <template for:each={errorMssgToRender} for:item="error">
+                <div key={error.errorfield}>
+                    {error.errorfield} ':' {error.reasonforError}
+                </div>
+            </template>
+        </div>
+    </template>
+    <lightning-record-edit-form id="recordViewForm" object-api-name={objectApiName} onsubmit={handlesubmit}
+        onclick={handleclick}>
+        <lightning-messages></lightning-messages>
+        <template for:each={fieldsapiNameList} for:item="field">
+            <div key={field.fields}>
+                <template lwc:if={field.mandatory}>
+                    <lightning-input-field required label={field.fields} field-name={field.fields}>
+                    </lightning-input-field>
+                </template>
+                <template lwc:elseif={field.nonmandatory}>
+                    <lightning-input-field label={field.fields} field-name={field.fields}>
+                    </lightning-input-field>
+                </template>
+                <template lwc:else>
+                    <lightning-input-field value={recordId} label={field.fields} field-name={field.fields}>
+                    </lightning-input-field>
+                </template>
+            </div>
+        </template>
+        <lightning-button type="submit" label="Update record"></lightning-button>
+    </lightning-record-edit-form>
+</template>

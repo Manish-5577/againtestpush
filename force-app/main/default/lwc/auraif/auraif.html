@@ -1,0 +1,26 @@
+<template>
+    <lightning-input type ="checkbox" label ="show div" onchange ={auraiff}></lightning-input>
+    <template if:true={displaytrue}>
+    <div>i am here </div>
+</template>
+<template if:false={displaytrue}>
+    <div>i am false</div>
+</template>
+<!-- 
+
+<template for:each ={} for:item= {}>
+<template  for:each ={} for:item={room}>
+    <p key={any varible for primitive data type and if object then use any key of like room.roomcapacity}></p>
+</template>
+</template>
+
+
+-->
+<template for:each={citylist} for:item="city">
+    <p key={city}>{city}</p>
+</template>
+<p>here is the another way of iteration </p>
+<template iterator:it={citylist}>
+    <p key ={it.value}>{it.value}</p>
+</template>
+</template>

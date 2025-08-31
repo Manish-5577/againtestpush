@@ -1,0 +1,40 @@
+<template>
+
+<lightning-input type="text" variant="standard" name="test" value ={userinputvalue} onchange ={handlechange} label="label"  placeholder="type here..."></lightning-input>
+<lightning-button variant="brand" label="handle" title="titleName" onclick={handleClick}></lightning-button>
+<template lwc:if={childone}>
+   <c-child1></c-child1>
+</template>
+<template lwc:elseif={childtwo}>
+   <c-child2></c-child2>
+</template>
+<template lwc:elseif={childthree}>
+   <c-child3></c-child3>
+</template>
+<template lwc:else>
+</template>
+<lightning-card  variant="Narrow"  title="FOR EACH TEST " icon-name="standard:account">
+    <table>
+     <thead>
+            <tr>
+          <th> name </th>
+            <th> name </th>
+            <th> sirname </th>
+            </tr>
+      </thead>
+        <tbody>
+<template  for:each={mm} for:item="con" for:index="index">
+       <!-- <li > -->
+        <tr key={con.Id}>
+            <td> {con.name} </td>
+                        <td> {con.age} </td>
+                                    <td> {con.sirname} </td>
+                                    </tr>
+       <!-- </li> -->
+    
+    </template>
+        </tbody>
+    </table>
+    
+</lightning-card>
+</template>

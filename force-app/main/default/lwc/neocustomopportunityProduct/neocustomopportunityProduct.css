@@ -1,0 +1,13 @@
+.search_effect
+{
+    cursor: pointer;
+color: black;
+}
+.search_effect:hover
+{
+   background-color: rgb(220, 249, 249);
+}
+.test:hover
+{
+    background-color: rgb(220, 249, 249);
+}

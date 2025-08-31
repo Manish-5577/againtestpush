@@ -1,0 +1,24 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+      <lightning-accordion 
+         
+          active-section-name="A">
+          <lightning-accordion-section name="A" label="Upcoming Event">
+            <lightning-datatable
+              key-field="id"
+              data={attendeventlist}
+              columns={eventlist}
+            ></lightning-datatable>
+          </lightning-accordion-section>
+          <lightning-accordion-section name="B" label="Past Event">
+            <lightning-datatable
+            key-field="id"
+            data={attendpasteventlist}
+            columns={eventlist}
+          ></lightning-datatable>
+          </lightning-accordion-section>
+      
+         
+      </lightning-accordion>
+    </lightning-card>
+</template>

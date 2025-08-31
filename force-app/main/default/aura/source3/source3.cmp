@@ -1,0 +1,6 @@
+<aura:component >
+<!-- <c:source4/>    -->
+   tttttttttttttttttttes
+   <aura:handler  event ="c:testeventt" action = "{!c.invoke3}"   />
+  <!--   {!v.body}   -->
+</aura:component>

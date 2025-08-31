@@ -1,0 +1,87 @@
+<template>
+    
+<lightning-card  variant="base">
+   <template  if:true={loader}>
+    <lightning-spinner 
+     
+    size="large"
+    variant="base"
+  ></lightning-spinner>
+
+   </template>
+   
+   
+
+  <lightning-layout multiple-rows="true">
+    <lightning-layout-item size ="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="6">
+      <lightning-input 
+        type="text"
+        label="Subject"
+        name="Subject"
+        required="true"
+        value={taskrecord.Subject}
+        onchange={handleChange}
+      ></lightning-input>
+    </lightning-layout-item>
+    <lightning-layout-item size ="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="6">
+        <lightning-input 
+          type="date"
+          label="Due Date"
+          name="ActivityDate"
+          required="true"
+          value={taskrecord.ActivityDate}
+          message-when-value-missing="Fill kar bhai "
+          message-when-bad-input="kya  majak laga ke rakha hai sahi se value dal"
+          onchange={handleChange}
+        ></lightning-input>
+      </lightning-layout-item>
+  </lightning-layout>
+
+  <lightning-layout multiple-rows="true">
+    <lightning-layout-item size ="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="6">
+        <lightning-combobox
+        name="Status"
+        label="Status"
+       
+        value={taskrecord.Status}
+        placeholder="Select Progress"
+        options={statusoption}
+        onchange={handleChange} ></lightning-combobox>
+
+    </lightning-layout-item>
+    <lightning-layout-item size ="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="6">
+        <lightning-combobox
+        name="Priority"
+        label="Priority"
+        value={taskrecord.Priority}
+        placeholder="Select Priority"
+        options={priorityoption}
+        onchange={handleChange} ></lightning-combobox>
+
+      </lightning-layout-item>
+  </lightning-layout>
+  <lightning-layout multiple-rows="true">
+<lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="6">
+  <lightning-textarea 
+    name="Description" 
+    label="Comments" 
+    value={taskrecord.Description}
+    placeholder="type here..."    
+   
+    onchange={handleChange}
+    variant="standard"
+  ></lightning-textarea>
+</lightning-layout-item>
+  </lightning-layout>
+  <div>
+    <lightning-button 
+      variant="destructive"
+      label="Create Task" 
+      onclick={handleClick} 
+
+    ></lightning-button>
+  </div>
+</lightning-card>
+
+
+</template>

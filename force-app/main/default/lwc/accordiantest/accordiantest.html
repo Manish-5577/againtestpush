@@ -1,0 +1,18 @@
+<template>
+    <lightning-accordion onsectiontoggle={handleSectionToggle}>
+        <lightning-accordion-section name="section1" label="Section 1">
+            <template if:true={section1Loaded}>
+                <!-- Heavy Data of Section 1 -->
+
+                heavy section onee
+            </template>
+        </lightning-accordion-section>
+
+        <lightning-accordion-section name="section2" label="Section 2">
+            <template if:true={section2Loaded}>
+                <!-- Heavy Data of Section 2 -->
+                heavu sectoin two
+            </template>
+        </lightning-accordion-section>
+    </lightning-accordion>
+</template>

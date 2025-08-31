@@ -1,0 +1,23 @@
+<template>
+    <lightning-card>
+      <lightning-input 
+        type="datetime" 
+        name="input1" 
+        onchange={handledatetime}
+        label="Enter a date/time value" 
+      ></lightning-input>
+      <div>
+        <c-searchcomp onpracsearch={handleserch} search-label="Search event" show-label ="true" ></c-searchcomp>
+      </div>
+      <div>
+        <c-searchcomp onpracsearch={handlelocationserch} search-label="Search event Based on Location" show-label ="true" ></c-searchcomp>
+      </div>
+    <div>
+        <lightning-datatable
+          key-field="id"
+          data={dataa}
+          columns={eventlist}
+        ></lightning-datatable>
+      </div>
+    </lightning-card>
+</template>

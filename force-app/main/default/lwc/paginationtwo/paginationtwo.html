@@ -1,0 +1,32 @@
+<template>
+
+<div  class="centerr">
+    <lightning-button-group>
+    <lightning-button label="Previous" onclick ={handleprevious}></lightning-button>
+    <lightning-button label="Next" onclick={handleNext}></lightning-button>
+    </lightning-button-group>
+</div>
+<div class="slds-scrollable slds-m-around_medium" >
+<lightning-card   variant="Narrow"  title="Hello" icon-name="standard:account">
+        <table style="height: 250px;" class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-table_striped slds-max-medium-table_stacked-horizontal">
+<thead>
+    <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Rating</th>
+    </tr>
+</thead>
+<tbody>
+    <template if:true={warehouse} for:each={warehouse} for:item="acc" for:index="index">
+       <tr key={acc.Id}>
+           <td> {acc.Name} </td>
+           <td> {acc.Id} </td>
+           <td> {acc.Rating} </td>
+       </tr>
+    </template>
+</tbody>
+</table>
+</lightning-card>
+</div>
+
+</template>

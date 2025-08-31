@@ -1,0 +1,52 @@
+<template>
+
+  testing lwc card rendeereded 
+    <ul>
+    <template for:each= {meetingroominfo} for:item= "room">
+        <li key= {room.rooomname}>
+    <c-revisionslotchild>
+
+      <lightning-button 
+        variant="brand"
+        label="unnamed solt testing" 
+
+      ></lightning-button>
+      <lightning-button 
+      variant="brand"
+      label="unnamed sol@@@@@@@@@@@@@" 
+
+    ></lightning-button>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-tile label ={room.rooomname} slot="roominfo">
+                <p class="slds-truncate" title={room.rooomname}>slot testing {room.roomcapacity}</p>
+            </lightning-tile>
+        </div>
+<div>unmaedslot eg</div>
+  <div>
+    named slot 
+    <span slot="firstName"><lightning-button 
+      variant="success"
+      label="firtsname button y slot" 
+      
+    ></lightning-button></span>
+    <lightning-button 
+    variant="brand"
+    label="unnamed solt3333@@@" 
+
+  ></lightning-button>
+    <span slot="lastName"><lightning-button 
+      variant="destructive"
+      label="lastname button slot" 
+      onclick={handleClick} 
+    ></lightning-button></span>
+  </div>
+  <lightning-input 
+    type="datetime"
+    label="unmaed behaviourrr"
+  ></lightning-input>
+    </c-revisionslotchild>
+
+</li>
+</template>
+</ul>
+</template>

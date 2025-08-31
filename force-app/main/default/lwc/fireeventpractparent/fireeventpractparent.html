@@ -1,0 +1,17 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+          Show casing value in Parent Coming From CHild Using event 
+      </div>
+      
+      <div>
+        <lightning-input 
+          type="text"
+          label="Value  from child"
+          value ={childvaluee}
+        ></lightning-input>
+        <c-fireeventpract oneventnameanything={handleevent}></c-fireeventpract>
+        
+      </div>
+    </lightning-card>
+</template>

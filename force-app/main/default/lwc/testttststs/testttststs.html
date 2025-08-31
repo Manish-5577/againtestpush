@@ -1,0 +1,41 @@
+<template>
+    <lightning-button 
+      variant="Success"
+      label="Button Label" 
+      onclick={handleClick} 
+    ></lightning-button>
+    <table>
+    <tr>
+        <th>Currency Code</th>
+        <th>Currency Value</th>
+      </tr><tr>
+        <td>
+   <template iterator:it={one}>
+    <p key={it.value.one}>
+        <input type="radio" id="age1" name="age" value="30">
+  <label for="age1" >{it.value}</label><br>
+    </p>
+</template>
+</td>
+
+<td>
+    <template iterator:it={two}>
+     <p key={it.value.two} >
+        <input type="radio" id="age2" name="age" value="30" >
+  <label for="age1" >{it.value}</label><br>
+     </p>
+ </template>
+ </td>
+
+</tr>
+</table>
+    <template if:true={datta}>
+   <lightning-datatable
+     key-field="id"
+     data={datta}
+     columns={columns}
+   ></lightning-datatable>
+</template>
+  
+
+</template>

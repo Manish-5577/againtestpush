@@ -1,0 +1,29 @@
+<template>
+    <lightning-card>
+
+<lightning-layout multiple-rows="true">
+<lightning-layout-item size="6">
+<lightning-input  label = "accountname" onchange ={accountnamehandler}></lightning-input>
+<lightning-input label = "accountphone" type="Phone" onchange ={accountphonehandler}></lightning-input>
+
+<lightning-input label = "accounturl"  type ="URL" onchange ={accounturlhandler}></lightning-input>
+
+
+<lightning-button label ="createaccount" variant="brand" onclick={createaccount}></lightning-button>
+</lightning-layout-item>
+
+<lightning-layout-item size="6">
+    kkallkajlkadjlksad
+   <template if:true={accountnames}>
+    tetststtst gessjss  mnaish  
+   
+  <!--   <p><lightning-formatted-text value={accountnames></lightning-formatted-text></p>
+    <p><lightning-formatted-phone value={accountphones></lightning-formatted-phone></p>
+    <p><lightning-formatted-url value={accounturls></lightning-formatted-url></p>  -->
+   <div>tetstst mnaishhs</div> 
+</template>
+</lightning-layout-item>
+</lightning-layout>
+
+    </lightning-card>
+</template>

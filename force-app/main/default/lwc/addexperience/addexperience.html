@@ -1,0 +1,20 @@
+<template>
+  <lightning-card>
+
+<lightning-layout multiple-rows="true">
+<lightning-layout-item size="12" padding="around-small">
+    <lightning-input label="Title" onchange={handleTitleChange}></lightning-input>
+</lightning-layout-item >
+<lightning-layout-item  size="12" padding="around-small">
+    <lightning-input-rich-text label="Description" onchange={handleDescriptionChange}></lightning-input-rich-text>
+</lightning-layout-item >
+<lightning-layout-item  size="12" padding="around-small">
+    <lightning-button class="slds-m-top_small" variant="brand" label="Add Experience" onclick={addExperience}></lightning-button>
+</lightning-layout-item>
+
+
+</lightning-layout>
+
+
+  </lightning-card>  
+</template>

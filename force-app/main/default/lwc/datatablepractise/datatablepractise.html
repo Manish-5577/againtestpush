@@ -1,0 +1,32 @@
+<template>
+<lightning-card  variant="Narrow"  title="Card show case @@!!!7777 account and related data" icon-name="standard:account">
+    
+  <table>
+  <thead>
+  <tr>
+    <th>Account Name</th>
+     <th>Account Id </th>
+    </tr>
+  </thead>
+  <tbody>
+   <template if:true={accountwraapper} for:each={accountwraapper} for:item="accon" for:index="index">
+              <tr key={accon.Id}>
+    <th>{accon.accountname}</th>
+     <th>{accon.id}</th>
+     <th><lightning-button variant="brand" label="view contact/ opportunities" data-index={index}  title="titleName" onclick={handleClick}></lightning-button></th>
+      </tr>
+   </template>
+  </tbody>
+  </table>
+    
+    <template lwc:if={showcondata}>
+      <c-childcompofdatatable childcontact= {childconlist}></c-childcompofdatatable>
+    </template>
+    <template lwc:else>
+     
+    </template>
+</lightning-card>
+<div>
+<lightning-button variant="brand" label="cuurenttarget@@@" title="titleName" onclick={handleClicktarget}></lightning-button>
+</div>
+</template>

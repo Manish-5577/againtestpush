@@ -1,0 +1,12 @@
+<aura:component >
+<!--	<aura:handler name ="sourcecomponent" event ="c:eventpropagation" action ="{!c.handleevent}" includeFacets ="true" phase="bubble"/>-->
+    <div>
+    root component
+    </div>
+    <div>
+       {!v.body}
+    </div>
+        <lightning:button value ="Fire component event" label ="fire component event" variant ="brand" onclick ="{!c.executevent}"/>
+
+    <aura:registerEvent name ="sourcecomponent" type="c:eventpropagation"/>
+</aura:component>

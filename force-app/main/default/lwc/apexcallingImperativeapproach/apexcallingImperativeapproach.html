@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Calling Apex Via wire Approach without cacheable = true">
+
+        <lightning-button 
+          variant="brand"
+          label="navigate to stanadrd comp" 
+          onclick={handlenavigation} 
+        ></lightning-button>
+        <lightning-input type="number"  onchange={Noofrecordcount}></lightning-input>
+        <p><lightning-button label ="Click To Get Result" onclick={getresult}></lightning-button> </p>
+        <ul>
+            <template if:true={getresponse}>
+    <template for:each={accounts} for:item="acc">
+    <li key={acc.id}>
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-tile label={acc.Name} href="/path/to/somewhere">
+                    <p class="slds-truncate" title={acc.phone}>{acc.Phone}</p>
+                </lightning-tile>
+            </div>
+        </li>
+        </template>
+    </template>
+        </ul>
+    </lightning-card>
+</template>

@@ -1,0 +1,34 @@
+<aura:component  controller ="indianpostalcodeintegration" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+  <aura:attribute name="postalrecordlist" type ="list" ></aura:attribute>
+    <aura:attribute name ="enteredpin" type ="string"/>
+      <aura:attribute name ="enteredBranch" type ="string"/>
+      <aura:attribute name="columnlist" type ="list" ></aura:attribute>
+    
+      <lightning:card>
+          <p class ="abcde">Indian Postal Information Integration</p>
+          <div class ="slds-p-top_x-large">
+           <p class="slds-p-horizontal_small">
+              <lightning:input name="pincodes"   value ="{!v.enteredpin}" label="Pincode" placeholder="type here Pincode ..."/>
+        </p>
+                <p class="slds-p-horizontal_small">
+              <lightning:input name="BranchNmae"   value ="{!v.enteredBranch}" label="Pincode" placeholder="type here BranchName ..."/>
+        </p>
+          <div class ="slds-p-top_medium slds-p-left_medium">
+            <lightning:button variant="success" label="SearchPostalInfo" title="Success" onclick="{! c.searchPostal }"/>
+              </div>
+              </div>
+        </lightning:card>
+    
+    <div>
+          <lightning:card >
+     <lightning:datatable
+                keyField="id"
+                data="{! v.postalrecordlist }"
+                columns="{! v.columnlist }"
+                hideCheckboxColumn="true"/>
+        </lightning:card>
+    
+    </div>
+    
+</aura:component>

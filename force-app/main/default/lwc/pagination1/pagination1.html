@@ -1,0 +1,77 @@
+<template>
+
+ <lightning-card>
+        <template if:true={isLoaded}>
+            <lightning-spinner 
+                alternative-text="Loading..." 
+                variant="brand"
+            ></lightning-spinner>
+        </template>
+        <div class="slds-var-p-around_medium">
+        Name is !!!!!!!{name}
+        <br/><br/>
+        Description is {description}
+        <br/><br/><br/>
+        <lightning-button
+            label="Update Account"
+            onclick={updateAccountRecord}
+        ></lightning-button>
+        </div>
+    </lightning-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <div class="slds-scrollable slds-m-around_medium" >
+<lightning-card   variant="Narrow"  title="Hello" icon-name="standard:account">
+        <table style="height: 250px;" class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-table_striped slds-max-medium-table_stacked-horizontal">
+<thead>
+    <tr>
+    <th>Idelete</th>
+    <th>Name</th>
+    <th>Rating</th>
+    </tr>
+</thead>
+<tbody>
+    <template if:true={abc.data} for:each={abc.data} for:item="acc" for:index="index">
+       <tr key={acc.Id}>
+           <td> {acc.Name} </td>
+           <td> {acc.Id} </td>
+           <td> {acc.Rating} </td>
+           <td><lightning-button variant="brand" label="view contact" title="titleName"  data-index={index} data-id={acc.Id} onclick={handlecontact}></lightning-button></td>
+            <td><lightning-button variant="brand" label="Delete account" title="titleName" data-index={index} data-id ={acc.Id} onclick={handledelete}></lightning-button></td>
+       </tr>
+    </template>
+</tbody>
+</table>
+</lightning-card>
+</div>
+ <!-- <div  style="height: 250px;">
+<lightning-datatable
+    key-field="id"
+    data={datas}
+    show-row-number-column
+    row-number-offset={rowOffset}
+    hide-checkbox-column
+    columns={column}
+    onrowaction={handleRowAction}>
+</lightning-datatable>
+ </div> -->
+</template>

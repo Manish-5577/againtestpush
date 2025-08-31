@@ -1,0 +1,7 @@
+<aura:component >
+	
+    <aura:attribute name ="test2" type ="string"/>
+    <aura:handler  event = "c:testingevent" action = "{!c.invoke}" />
+    <!--  <c:testingevent1source/>  -->
+     <lightning:input name="input2" aura:id ="ff1" label="Enter some text"  value ="{!v.test2}" />
+</aura:component>

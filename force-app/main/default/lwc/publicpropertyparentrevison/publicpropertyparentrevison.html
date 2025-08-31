@@ -1,0 +1,21 @@
+<template>
+    <lightning-layout multiple-rows="true"><lightning-card title="Event handling">
+        <lightning-layout-item size ="5">
+           
+    <ul>
+  <template for:each={meetingroominfos} for:item="room">
+<li key ={room.roomname}>
+  <c-publicpropertyrevision  onanyeventname={handlingeventinparent} meetingroominfo ={room}  booleaneg ></c-publicpropertyrevision>
+</li>
+   </template>
+    </ul>
+
+</lightning-layout-item>
+<lightning-layout-item>
+  event handling
+    selected tile is {selectedroom};
+
+</lightning-layout-item>
+</lightning-card>
+</lightning-layout>
+</template>

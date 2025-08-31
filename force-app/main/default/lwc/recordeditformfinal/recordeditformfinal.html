@@ -1,0 +1,41 @@
+<template>
+    <lightning-card icon-name="utility:component_customization" variant="base">
+      <div slot="title">
+         record -Edit Form practise
+      </div>
+      <div slot="actions">
+    
+      </div>
+    
+      <div>
+        <template if:true={spinnnertrue}>
+            <div><div class="demo-only" style="height:6rem;position:relative">
+                <div class="slds-spinner_container">
+                  <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                  </div>
+                </div>
+              </div></div>
+        </template>
+        <template if:false={spinnnertrue}>
+       <lightning-record-edit-form
+         density="compact"
+         
+         object-api-name="Account"
+         onsuccess={handleSuccess}
+         onsubmit={handlesubmit}
+       >
+       <lightning-input-field field-name="Name"></lightning-input-field>
+       <lightning-input-field field-name="Industry"></lightning-input-field>
+       <lightning-input-field field-name={name}></lightning-input-field>
+       <lightning-input-field field-name={rating}></lightning-input-field>
+       <lightning-input-field field-name={carr}></lightning-input-field>
+       <lightning-button variant="brand" type="submit" label="Save" >
+    </lightning-button>
+       </lightning-record-edit-form>
+    </template>
+      </div>
+    </lightning-card>
+</template>

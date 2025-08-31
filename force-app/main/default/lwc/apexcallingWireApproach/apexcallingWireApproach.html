@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Calling Apex Via wire Approach">
+    <ul>
+        <template if:true={getresponse}>
+<template for:each={accounts.data} for:item="acc">
+<li key={acc.id}>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-tile label={acc.Name} href="/path/to/somewhere">
+                <p class="slds-truncate" title={acc.phone}>{acc.Phone}</p>
+            </lightning-tile>
+        </div>
+    </li>
+    </template>
+</template>
+    </ul>
+</lightning-card>
+</template>

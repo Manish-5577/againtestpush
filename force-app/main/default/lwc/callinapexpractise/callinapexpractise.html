@@ -1,0 +1,36 @@
+<template>
+    
+<lightning-card icon-name="standard:account" variant="base">
+  <h1 class="change"> Calling apex Using  Imperative approach</h1>
+  <div>
+     <lightning-input 
+       type="number"
+       label="How many account record you want to fetch"
+       onchange={handlechanage}
+     ></lightning-input>
+    
+  </div>
+  
+  <div>
+    <lightning-button 
+      variant="success"
+      label="Button Label" 
+      onclick={fetchdatacount} 
+    ></lightning-button>
+  </div>
+ <lightning-card icon-name="standard:account" variant="base">
+   <div slot="title">
+      Show case account data
+   </div>
+   <div>
+    <template if:true={datas}>
+     <lightning-datatable
+       key-field="id"
+       data={datas}
+       columns={columlist}
+     ></lightning-datatable>
+    </template>
+   </div>
+ </lightning-card>
+</lightning-card>
+</template>
